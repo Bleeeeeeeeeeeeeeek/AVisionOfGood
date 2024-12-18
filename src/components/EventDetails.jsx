@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 function EventDetails({ event }) {
-  const duplicatedPhotos = [...event.photos];
+  const duplicatedPhotos = [...event.photos, ...event.photos, ...event.photos];
   
   const arabicPhrases = [
     { arabic: "رَبَّنَا ظَلَمْنَا أَنفُسَنَا وَإِن لَّمْ تَغْفِرْ لَنَا وَتَرْحَمْنَا لَنَكُونَنَّ مِنَ الْخَاسِرِينَ", translation: "Our Lord! We have wronged ourselves. If You forgive us not, and bestow not upon us Your Mercy, we shall certainly be of the losers. (Quran 7:23)" },
@@ -38,7 +38,7 @@ function EventDetails({ event }) {
             x: [0, -2000]
           }}
           transition={{
-            duration: 40,
+            duration: 30,
             repeat: Infinity,
             repeatType: "loop",
             ease: "linear"
@@ -53,7 +53,7 @@ function EventDetails({ event }) {
             >
               <img
                 src={photo}
-                alt={`${event.name} photo ${index + 1}`}
+                alt={`${event.name} photo ${(index % event.photos.length) + 1}`}
                 className="h-full w-full object-cover rounded-lg"
               />
             </div>
