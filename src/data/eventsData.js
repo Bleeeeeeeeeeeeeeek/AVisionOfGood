@@ -7,8 +7,18 @@ export const eventsData = [
     description: 'During this two-day Ramadan charitable initiative, our team successfully accomplished multiple objectives: 1) Distributed Qurans and monthly ration supplies to support local madrasas in their educational mission, 2) Provided essential care packages and provisions to meet monthly requirements of local orphanages, 3) Supported the disabled community through clothing donations to sustainable resale centers, and 4) Distributed 250 comprehensive iftar packages to community members during Ramadan. This collaborative effort exemplified the spirit of giving and community support during the holy month.',
     participants: ['Mohamed', 'Eshan Amir', 'Refaat Al-Saei', 'Muhammad Zain Fawad', 'Hammad Dulvi','Luqmaan Abdula Amodo','Umar Imran','Mohammed Abdur Rahman','Izhan Zahid','Muhammad Affiq','','','','','','','Aiman Maqsood','Khaula Rama','Samira Abdalla','Sadine Elsayed',],
     photos: [
-      '/src/Img/logo.png',
-      '/src/Img/a.png','/src/Img/a.png','/src/Img/a.png','/src/Img/a.png','/src/Img/a.png'
+      '/src/assets/VOG1/Ramadan-1.JPG','/src/assets/VOG1/Ramadan-2.JPG','/src/assets/VOG1/Ramadan-3.JPG',
+      '/src/assets/VOG1/Ramadan-4.JPG','/src/assets/VOG1/Ramadan-5.JPG',
+      '/src/assets/VOG1/Ramadan-6.JPG',
+      '/src/assets/VOG1/Ramadan-7.JPG',
+      '/src/assets/VOG1/Ramadan-8.JPG',
+      '/src/assets/VOG1/Ramadan-9.JPG',
+      '/src/assets/VOG1/Ramadan-10.JPG',
+      '/src/assets/VOG1/Ramadan-11.JPG',
+      '/src/assets/VOG1/Ramadan-12.JPG',
+      '/src/assets/VOG1/Ramadan-13.JPG',
+      '/src/assets/VOG1/Ramadan-14.JPG',
+  '/src/assets/VOG1/Ramadan-15.JPG'
     ]
   },
   {
@@ -19,7 +29,7 @@ export const eventsData = [
     description: 'Through community collaboration, we successfully raised RM1,040 to support critical utility expenses for a local madrasah. The initiative was further enhanced by a remarkable contribution from a refugee family who donated 25kg of Qurbani meat. This meat was efficiently distributed among local madrasahs and orphanages, demonstrating the profound impact of community solidarity regardless of personal circumstances.',
     participants: ['Mohamed','Hamaad','','','','','','','Sidrah Ahmed','Habiba Hassouna','Aaliyah Anwar',''],
     photos: [
-      'https://example.com/placeholder6.jpg',
+      'https://drive.google.com/file/d/1nO8-z5jN6bQqGb7K-opTO-ZXz0ppGbbr/view?usp=drive_link',
       'https://example.com/placeholder7.jpg'
     ]
   },
