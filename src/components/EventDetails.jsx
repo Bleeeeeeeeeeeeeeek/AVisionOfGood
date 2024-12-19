@@ -2,8 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 function EventDetails({ event }) {
-  const duplicatedPhotos = [...event.photos, ...event.photos, ...event.photos];
-  
   const arabicPhrases = [
     { arabic: "رَبَّنَا ظَلَمْنَا أَنفُسَنَا وَإِن لَّمْ تَغْفِرْ لَنَا وَتَرْحَمْنَا لَنَكُونَنَّ مِنَ الْخَاسِرِينَ", translation: "Our Lord! We have wronged ourselves. If You forgive us not, and bestow not upon us Your Mercy, we shall certainly be of the losers. (Quran 7:23)" },
     { arabic: "لَّا إِلَهَ إِلَّا أَنتَ سُبْحَانَكَ إِنِّي كُنتُ مِنَ الظَّالِمِينَ ", translation: "No one has the right to be worshiped but You (O Allah), Glorified (and Exalted) are You. Truly, I have been of the wrong-doers.  (Qur'an 21:87)" },
@@ -12,56 +10,6 @@ function EventDetails({ event }) {
     { arabic: "فَاطِرَ السَّمَاوَاتِ وَالأَرْضِ أَنتَ وَلِيِّي فِي الدُّنُيَا وَالآخِرَةِ تَوَفَّنِي مُسْلِمًا وَأَلْحِقْنِي بِالصَّالِحِينَ ", translation: "“The Creator of the heavens and the earth! You are my Wali (Protector, Helper, Supporter, Guardian, etc.) in this world and in the Hereafter, cause me to die as a Muslim (the one submitting to Your Will), and join me with the righteous.”  (Quran 12:101)" },
     { arabic: "رَبِّ اِنِّىۡۤ اَعُوۡذُ بِكَ اَنۡ اَسۡـئَلَكَ مَا لَـيۡسَ لِىۡ بِهٖ عِلۡمٌ​ؕ وَاِلَّا تَغۡفِرۡ لِىۡ وَتَرۡحَمۡنِىۡۤ اَكُنۡ مِّنَ الۡخٰسِرِيۡنَ", translation: "O my Lord! I seek refuge with You from asking You that of which I have no knowledge. And unless You forgive me and have mercy on me, I would indeed be one of the losers." }
   ];
-
-  const renderMedia = () => {
-    if (event.mediaType === 'video') {
-      return (
-        <div className="aspect-video w-full max-w-4xl mx-auto rounded-lg overflow-hidden shadow-lg">
-          <iframe
-            src={event.video}
-            className="w-full h-full"
-            frameBorder="0"
-            allowFullScreen
-            allow="autoplay; encrypted-media"
-            title="event video"
-            loading="lazy"
-          ></iframe>
-        </div>
-      );
-    }
-
-    // Existing photo carousel code
-    return (
-      <div className="overflow-hidden -mx-4 md:-mx-12 h-[250px] md:h-[300px]">
-        <motion.div
-          animate={{
-            x: [0, -2000]
-          }}
-          transition={{
-            duration: 30,
-            repeat: Infinity,
-            repeatType: "loop",
-            ease: "linear"
-          }}
-          className="flex gap-4 md:gap-6 px-4 md:px-12 h-full"
-        >
-          {duplicatedPhotos.map((photo, index) => (
-            <div 
-              key={index} 
-              className="relative h-full aspect-[4/3] rounded-lg shadow-lg flex-shrink-0"
-              style={{ width: 'auto' }}
-            >
-              <img
-                src={photo}
-                alt={`${event.name} photo ${(index % event.photos.length) + 1}`}
-                className="h-full w-full object-cover rounded-lg"
-              />
-            </div>
-          ))}
-        </motion.div>
-      </div>
-    );
-  };
 
   return (
     <motion.div
@@ -104,23 +52,13 @@ function EventDetails({ event }) {
         </div>
       </div>
 
-      <div className="space-y-6 md:space-y-8">
-        <h3 className="text-xl md:text-2xl font-light tracking-tight mb-4 md:mb-6" style={{ color: '#2b1c12' }}>
-          {event.mediaType === 'video' ? 'Event Video' : 'Event Photos'}
-        </h3>
-        {renderMedia()}
-        
-        <div 
-          className="text-center py-6 md:py-8 border-t border-[#2b1c12]/20"
-          style={{ color: '#858500' }}
-        >
-          <p className="text-2xl md:text-3xl mb-2 font-arabic leading-relaxed">
-            {arabicPhrases[event.id.slice(-1) % arabicPhrases.length].arabic}
-          </p>
-          <p className="text-xs md:text-sm italic">
-            {arabicPhrases[event.id.slice(-1) % arabicPhrases.length].translation}
-          </p>
-        </div>
+      <div className="text-center py-6 md:py-8 border-t border-[#2b1c12]/20" style={{ color: '#858500' }}>
+        <p className="text-2xl md:text-3xl mb-2 font-arabic leading-relaxed">
+          {arabicPhrases[event.id.slice(-1) % arabicPhrases.length].arabic}
+        </p>
+        <p className="text-xs md:text-sm italic">
+          {arabicPhrases[event.id.slice(-1) % arabicPhrases.length].translation}
+        </p>
       </div>
     </motion.div>
   );
